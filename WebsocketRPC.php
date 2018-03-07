@@ -48,7 +48,7 @@ class WebsocketRPC {
 	public function WebSocketClose($callback) {
 		$redis = $this->redis;
 		$this->ws_server->on('close', function ($server, $fd) use ($redis, $callback) {
-			$user_key = $redis->get($this->redis_key_prefix . "socket_fd_" . $frame->fd);
+			$user_key = $redis->get($this->redis_key_prefix . "socket_fd_" . $fd);
 			$redis->del($this->redis_key_prefix . md5($user_key));
 			$redis->del($this->redis_key_prefix . "socket_fd_" . $fd);
 
