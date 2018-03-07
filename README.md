@@ -32,7 +32,7 @@ $rpc->WebsocketStart();
 Params | Type | Description |Method
 --- | --- | --- | ---
 act | String | ```stats``` / ```list``` / ```push``` | GET
-type| String | For Params ```push```, single/multi/broadcast | GET
+type| String | For Params ```act```,Type ```push```, Param List: ```single``` / ```multi``` / ```broadcast``` | GET
 data | String | For Params ```push``` | POST
 user_key_list | String | For Params ```push``` | POST
 user_key | String | For Params ```push``` | POST
