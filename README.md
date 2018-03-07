@@ -33,9 +33,9 @@ Params | Type | Description |Method
 --- | --- | --- | ---
 act | String | ```stats``` / ```list``` / ```push``` | GET
 type| String | ```single``` / ```multi``` / ```broadcast``` | GET
-data | String | For Params ```push``` | POST
-user_key_list | String | For Params ```push``` | POST
-user_key | String | For Params ```push``` | POST
+data | String | ```Some Text...``` | POST
+user_key_list | String | ```[{"key":"md5(user_key)","msg":"owo"}]``` | POST
+user_key | String | ```md5(user_key)``` | POST
 
 ### Demo Response
 
