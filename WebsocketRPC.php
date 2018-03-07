@@ -118,9 +118,11 @@ class WebsocketRPC {
 					$result['fail_count'] = $fail_count;
 					break;
 				case 'broadcast':
+					$result = [];
 					foreach ($ws_server->connections as $fd) {
 						$ws_server->push($fd, @$request->post['data']);
 					}
+					$result['status'] = 200;
 					break;
 				}
 				$response->end(json_encode($result));
