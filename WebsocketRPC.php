@@ -97,7 +97,7 @@ class WebsocketRPC {
 					if ($ws_server->push($fd, @$request->post['data']) == true) {
 						$result['status'] = 200;
 					} else {
-						$result['status'] = 400;
+						$result['status'] = 404;
 					}
 					break;
 				case 'multi':
