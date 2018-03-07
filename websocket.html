@@ -1,0 +1,14 @@
+<script type="text/javascript">
+var wsUri = "ws://127.0.0.1:9999/" + Math.floor(Math.random() * 10);
+var ws = new WebSocket(wsUri);
+ws.onopen = function(evt) {
+};
+ws.onclose = function(evt) {
+};
+ws.onmessage = function(evt) {
+    console.log("Receive: " + evt.data);
+};
+ws.onerror = function(evt) {
+    console.log("ERROR: " + evt.data);
+};
+</script>
