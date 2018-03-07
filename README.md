@@ -27,6 +27,24 @@ $rpc->HttpServerStart();
 $rpc->WebsocketStart();
 ```
 
+## Frontend Demo
+```
+<script type="text/javascript">
+var wsUri = "ws://127.0.0.1:9999/" + user_key;  //A Unique primary key
+var ws = new WebSocket(wsUri);
+ws.onopen = function(evt) {
+};
+ws.onclose = function(evt) {
+};
+ws.onmessage = function(evt) {
+    console.log("Receive: " + evt.data);
+};
+ws.onerror = function(evt) {
+    console.log("ERROR: " + evt.data);
+};
+</script>
+```
+
 ## RPC API
 
 Params | Type | Description |Method
