@@ -80,10 +80,9 @@ user_key | String | For Params ```push``` | POST
 
 ---
 
-#### POST ```http://127.0.0.1:9998/?act=push&type=single```
+#### POST ```http://127.0.0.1:9998/?act=push&type=single&user_key={md5(user_key)}```
 Params | Content
 --- | --- |
-user_key | ```md5(user_key)```
 data | owo
 
 ```
