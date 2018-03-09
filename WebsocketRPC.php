@@ -4,7 +4,7 @@ class WebsocketRPC {
 	public $ws_server;
 	public $http_server;
 	public $redis_key_prefix;
-	public function __construct($http_port = 9998, $websocket_port = 9999, $redis_config = []) {
+	public function __construct($http_port = 9998, $websocket_port = 9999, $redis_config = [], $custom_config = []) {
 		$redis = new Redis();
 		$redis->connect($redis_config['host'], $redis_config['port']);
 		if (array_key_exists("auth", $redis_config)) {
@@ -14,6 +14,7 @@ class WebsocketRPC {
 		$this->redis_key_prefix = $redis_config['prefix'];
 
 		$ws_server = new swoole_websocket_server('0.0.0.0', $websocket_port);
+		$ws_server->set($custom_config);
 		$http_server = $ws_server->addListener('0.0.0.0', $http_port, SWOOLE_SOCK_TCP);
 		$http_server->set(array(
 			'open_http_protocol' => true,

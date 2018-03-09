@@ -4,6 +4,9 @@ $rpc = new WebsocketRPC(9998, 9999, [
 	'host' => "127.0.0.1",
 	'port' => 6379,
 	'prefix' => "WSRPC_",
+], [
+	'daemonize' => false,
+	'log_file' => '/tmp/ws.log',
 ]);
 $rpc->WebsocketOpen(function ($user_key) {
 	print_r($user_key);
