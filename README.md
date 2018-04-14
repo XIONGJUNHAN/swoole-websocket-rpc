@@ -49,7 +49,7 @@ ws.onerror = function(evt) {
 
 Params | Type | Description |Method
 --- | --- | --- | ---
-act | String | ```stats``` / ```list``` / ```push``` | GET
+act | String | ```stats``` / ```list``` / ```push``` / ```close```  | GET
 type| String | ```single``` / ```multi``` / ```broadcast``` | GET
 data | String | ```Some Text...``` | POST
 user_key_list | String | ```[{"key":"md5(user_key)","msg":"owo"}]``` | POST
@@ -129,6 +129,14 @@ Params | Content
 --- | --- |
 data | owo
 
+```
+{
+	"status":200
+}
+```
+---
+
+#### GET ```http://127.0.0.1:9998/?act=close&user_key={md5(user_key)}```
 ```
 {
 	"status":200
